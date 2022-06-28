@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background-color: #19567E !important;
+    /* background-color: #6DA6B6!important; */
+    font-family: "Girassol", "sans-serif";
+  }
+  .navbar img{
+    background-color: aliceblue;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #118204;  
+    box-shadow: 0 0 0 10px rgb(219, 125, 205);
+  }
+
+ .menu:hover{
+   background-color: #820467 !important;
+ }
