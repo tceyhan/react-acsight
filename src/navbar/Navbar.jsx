@@ -13,7 +13,7 @@ const Navbar = () => {
     userObserver(setCurrentUser);
   }, []);
   //  useeffect kullanıyoruz ki currentuser ilk geldiği anda tutabilelim.
-  
+
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,19 +35,13 @@ const Navbar = () => {
           <h6 className="h3 text-info text-uppercase">Acsight-cloud 4 feed</h6>
         </Link>
         <div>
+          <Button>{currentUser?.displayName}</Button>
           <Button
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "white",
-              fontSize: "1rem",
-              marginTop: "0.5rem",
-            }}
+            onClick={handleClick}            
           >
             <MenuSvg />
           </Button>
@@ -70,7 +64,10 @@ const Navbar = () => {
                 <MenuItem className="menu" onClick={() => navigate("/add")}>
                   Add Provider
                 </MenuItem>
-                <MenuItem className="menu" onClick={() => logOut()}>
+                <MenuItem className="menu" onClick={() => {
+                  navigate("/login")
+                  logOut()}
+                  }>
                   Log Out
                 </MenuItem>
               </div>

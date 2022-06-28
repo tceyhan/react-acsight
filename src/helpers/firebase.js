@@ -85,11 +85,10 @@ export const signIn = async (email, password, navigate) => {
   }
 };
 
-export const logOut = (navigate) => {
+export const logOut = () => {
   signOut(auth);
   alert ("Logged out successfully!");
-  toastSuccessNotify("Logged out successfully!");
-  navigate("/login")
+  toastSuccessNotify("Logged out successfully!");  
 };
 
 export const userObserver = (setCurrentUser) => {

@@ -3,7 +3,7 @@ import Navbar from "../navbar/Navbar";
 import Login from "./Login";
 import Register from "./Register";
 import AddProvider from "./AddProvider";
-import UpdateBlog from "./UpdateBlog";
+import UpdateProvider from "./UpdateProvider";
 import Notfound from "./Notfound";
 // import Data from "./Data"
 
@@ -17,7 +17,7 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />   
         <Route path="/add" element={<AddProvider />} />       
-        <Route path="/update" element={<UpdateBlog/>} />       
+        <Route path="/update" element={<UpdateProvider/>} />       
         <Route path="*" element={<Notfound />} />
       </Routes>
     </Router>
