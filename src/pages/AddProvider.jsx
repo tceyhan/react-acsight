@@ -47,7 +47,7 @@ const AddProvider = () => {
   console.log(formValues);
 
   return (
-    <div className="container-fluid w-50 p-5">
+    <div className="container-fluid w-50 p-5 bg-secondary mt-5 rounded-2">
       <header>
         <h1 className="text-success text-center m-2 bg-warning ">
           Add Provider Page

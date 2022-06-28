@@ -21,23 +21,23 @@ import {
 //* https://firebase.google.com/docs/auth/web/start
 //* https://console.firebase.google.com/ => project settings
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDn3yCSMOVAAsfGXROwu7L7f-kJtkp_SwA",
-  authDomain: "acsight-2aa32.firebaseapp.com",
-  projectId: "acsight-2aa32",
-  storageBucket: "acsight-2aa32.appspot.com",
-  messagingSenderId: "69426995501",
-  appId: "1:69426995501:web:00fa4cf3ef6162ee5473a4"
-};
-
 // const firebaseConfig = {
-//   apiKey:process.env.REACT_APP_apiKey,
-//   authDomain:process.env.REACT_APP_authDomain,
-//   projectId:process.env.REACT_APP_projectId,
-//   storageBucket:process.env.REACT_APP_storageBucket,
-//   messagingSenderId:process.env.REACT_APP_messagingSenderId,
-//   appId:process.env.REACT_APP_appId,
+//   apiKey: "AIzaSyDn3yCSMOVAAsfGXROwu7L7f-kJtkp_SwA",
+//   authDomain: "acsight-2aa32.firebaseapp.com",
+//   projectId: "acsight-2aa32",
+//   storageBucket: "acsight-2aa32.appspot.com",
+//   messagingSenderId: "69426995501",
+//   appId: "1:69426995501:web:00fa4cf3ef6162ee5473a4"
 // };
+
+const firebaseConfig = {
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
+};
 
 
 // Initialize Firebase
