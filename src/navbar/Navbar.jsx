@@ -35,8 +35,9 @@ const Navbar = () => {
           <h6 className="h3 text-info text-uppercase">Acsight-cloud 4 feed</h6>
         </Link>
         <div>
-          <Button>{currentUser?.displayName}</Button>
+          <Button className="text-warning">{currentUser?.displayName}</Button>
           <Button
+            className="text-warning"
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
             aria-haspopup="true"
