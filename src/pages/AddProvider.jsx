@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import axios from "axios";
 const AddProvider = () => {
   const [formValues, setFormValues] = useState({
-    ID: "",
+    ID: "0",
     ProviderID: "",
     PartnerID: "",
     BaseURL: "",
@@ -28,9 +28,8 @@ const AddProvider = () => {
     const {
       ID,
       ProviderID,
-      PartnerID,
       BaseURL,
-      FromName,
+      fromName,
       Username,
       Password,
       VendorCode,
@@ -39,12 +38,52 @@ const AddProvider = () => {
       AccountSID,
       AuthToken,
       Status,
-      CreatedBy,
-      CreatedWhen,
-      UpdatedBy,
+
     } = formValues;
+    e.preventDefault();
+    let data = JSON.stringify({
+      "id": ID,
+      "providerID": ProviderID,
+      "partnerID": 2,
+      "baseURL": BaseURL,
+      "fromName": fromName,
+      "username": Username,
+      "password": Password,
+      "vendorCode": VendorCode,
+      "apiKey": ApiKey,
+      "secretKey": SecretKey,
+      "accountSID": AccountSID,
+      "authToken": AuthToken,
+      "status": Status,
+    });
+    let config = {
+      method: "post",
+      url: "http://c4f2.acsight.com:7770/api/system/add-partner-sms-provider",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjBGQ0Y0N0E5NzVDQzJCNTdEQTdFRkFGQUM2MTkxOUUyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NTY0NjkzMTEsImV4cCI6MTY1NjQ3MjkxMSwiaXNzIjoiaHR0cDovL2M0ZjIuYWNzaWdodC5jb206NzcxMCIsImF1ZCI6InNjb3BlLmZ1bGxhY2Nlc3MiLCJjbGllbnRfaWQiOiJDbGllbnRJZFdpdGhGdWxsQWNjZXNzIiwic3ViIjoiUGFydG5lciM4IiwiYXV0aF90aW1lIjoxNjU2NDY5MzExLCJpZHAiOiJsb2NhbCIsIlVzZXJJRCI6IjgiLCJVc2VyVHlwZSI6IlBhcnRuZXIiLCJQYXJ0bmVySUQiOiI1IiwiQ2xpZW50SUQiOiIwIiwiREJUeXBlIjoiMCIsIlNlcnZlciI6IiIsIkRhdGFiYXNlIjoiIiwiVXNlcm5hbWUiOiIiLCJQYXNzd29yZCI6IiIsImp0aSI6IkY0QzFCMjIyQURDOTk0NzEzODg2N0ZFMkVDN0Q1QjI3IiwiaWF0IjoxNjU2NDY5MzExLCJzY29wZSI6WyJzY29wZS5mdWxsYWNjZXNzIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.D8XI_tN48CZhOBoPm5hl1xlnvsd7yTAfX1wmoXKMHQnksYPjWrBhLLJkzma8u18OQj6fDU2zmWFCsq992pEb_t1ox8wGlnWYIW7TZv2SBSSLNokcyEFbTOuj2ADcaD4hVSFwvadInXg4qAAoS2_6GNWqHLv8dQqBN4lSHm6vALndhTZoHk_GhOQh_7rzdYDIz4nCALDWOViyfB13DYlNW6f7YiMH1Q9qnS3SJ5-1-XgCi4e3s0QFnqmxKFOggbYIMDn0wj3pvN7f9X4sjdd5Q63prnGMIG9XuPW3__6Ssrry5javzXnPAjFjicmRftzSV0Ep18RF2vIuSOA2HEQ_wQ",
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+          console.log("server responded");
+        } else if (error.request) {
+          console.log("network error");
+        } else {
+          console.log(error);
+        }
+      });
+
+    console.log(formValues);
   };
-  console.log(formValues);
 
   return (
     <div className="container-fluid w-50 p-5 bg-secondary mt-5 rounded-2">
@@ -55,6 +94,16 @@ const AddProvider = () => {
       </header>
       <main>
         <form onSubmit={handleSubmit}>
+          <div className="">
+            <input
+              type="text"
+              className="form-control"
+              id="ID"
+              placeholder="ID"
+              value={formValues.ID}
+              onChange={handleFormValues}
+            />
+          </div>
           <div className="mb-3">
             <select
               className="form-control"

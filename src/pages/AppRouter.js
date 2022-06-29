@@ -5,7 +5,7 @@ import Register from "./Register";
 import AddProvider from "./AddProvider";
 import UpdateProvider from "./UpdateProvider";
 import Notfound from "./Notfound";
-// import Data from "./Data"
+import DataList from "./DataList";
 
 
 const AppRouter = () => {
@@ -13,7 +13,7 @@ const AppRouter = () => {
     <Router>      
       <Navbar />
       <Routes>
-        {/* <Route path="/" element={<Data />} />     */}
+        <Route path="/" element={<DataList />} />    
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />   
         <Route path="/add" element={<AddProvider />} />       
