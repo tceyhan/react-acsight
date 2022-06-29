@@ -11,6 +11,7 @@ import TableRow from "@mui/material/TableRow";
 
 const DataList = () => {
   const [veri, setVeri] = useState([]);
+  
 
   useEffect(() => {
     var config = {
@@ -59,6 +60,7 @@ const DataList = () => {
         break;
     }
   }
+  
   console.log(veri);
   return (
     <div>
