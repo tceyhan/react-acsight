@@ -1,4 +1,3 @@
-import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,7 +14,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { forgotPassword, signIn, signUpProvider } from "../helpers/firebase";
 import "../styles/login.css";
 import Google from "../assets/Google";
 
@@ -28,8 +26,9 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://github.com/tceyhan">
-        Tarık CEYHAN
+      <Link color="inherit" href="https://www.cloud4feed.com
+">
+        acsight-cloud4fed
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -47,16 +46,10 @@ export default function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //? firebase.js'de yaptığımız sıgnIn metodunu kullanarak login yapıyoruz
-    signIn(email, password, navigate);
-    console.log(email, password);
+    navigate("/")
   };
 
-  const handleProviderLogin = () => {
-     signUpProvider(navigate);
-    
 
-  };
 
   return (
     <div className="login">
@@ -117,23 +110,18 @@ export default function SignIn() {
                 fullWidth
                 variant="outlined"
                 sx={{ mt: 2, mb: 2 }}
-                onClick={handleProviderLogin}
+                onClick={() => navigate("/")}
               >
                  <Google />
                 
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link onClick={() => forgotPassword(email)} variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
+             
                 <Grid item>
                   <Link onClick={()=>navigate("/register")} variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
-              </Grid>
+              
             </Box>
           </Box>
           <Copyright sx={{ mt: 8, mb: 4 }} />

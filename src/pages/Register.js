@@ -13,7 +13,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUser } from "../helpers/firebase";
 import "../styles/register.css";
 
 
@@ -21,8 +20,8 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://github.com/tceyhan">
-        Tarık CEYHAN
+      <Link color="inherit" href="https://www.cloud4feed.com">
+      acsight-cloud4fed
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -42,14 +41,10 @@ const Register = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    const displayName = `${firstName} ${lastName}`;
-         
-    e.preventDefault();
-    //? firebase.js'de yaptığımız createUser metodunu kullanarak kullanıcıyı oluşturuyoruz.
-    createUser(email, password, displayName, navigate);
-    console.log(firstName, lastName, displayName, email, password);
-    
+  const handleSubmit = (e) => {          
+    e.preventDefault();   
+    navigate("/login")
+    console.log(firstName, lastName, email, password);    
   };
 
   return (

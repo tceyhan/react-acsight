@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Menu, MenuItem } from "@mui/material";
 import MenuSvg from "../assets/MenuSvg";
-import { userObserver } from "../helpers/firebase";
-import { logOut } from "../helpers/firebase";
 import "../styles/navbar.css";
 
 const Navbar = () => {
-  const [currentUser, setCurrentUser] = useState();
-
-  useEffect(() => {
-    userObserver(setCurrentUser);
-  }, []);
-  //  useeffect kullanıyoruz ki currentuser ilk geldiği anda tutabilelim.
-
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,14 +26,13 @@ const Navbar = () => {
           <h6 className="h3 text-info text-uppercase">Acsight-cloud 4 feed</h6>
         </Link>
         <div>
-          <Button className="text-warning">{currentUser?.displayName}</Button>
           <Button
             className="text-warning"
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}            
+            onClick={handleClick}
           >
             <MenuSvg />
           </Button>
@@ -57,34 +47,27 @@ const Navbar = () => {
             <MenuItem className="menu" onClick={() => navigate("/")}>
               Data List
             </MenuItem>
-            {currentUser ? (
-              <div>
-                <MenuItem className="menu" onClick={() => navigate("/update")}>
-                  Update Provider
-                </MenuItem>
-                <MenuItem className="menu" onClick={() => navigate("/add")}>
-                  Add Provider
-                </MenuItem>
-                <MenuItem className="menu" onClick={() => {
-                  navigate("/login")
-                  logOut()}
-                  }>
-                  Log Out
-                </MenuItem>
-              </div>
-            ) : (
-              <div>
-                <MenuItem className="menu" onClick={() => navigate("/login")}>
-                  Login
-                </MenuItem>
-                <MenuItem
-                  className="menu"
-                  onClick={() => navigate("/register")}
-                >
-                  Register
-                </MenuItem>
-              </div>
-            )}
+
+            <div>
+              <MenuItem className="menu" onClick={() => navigate("/update")}>
+                Update Provider
+              </MenuItem>
+              <MenuItem className="menu" onClick={() => navigate("/add")}>
+                Add Provider
+              </MenuItem>
+              <MenuItem className="menu" onClick={() => navigate("/login")}>
+                Log Out
+              </MenuItem>
+            </div>
+
+            <div>
+              <MenuItem className="menu" onClick={() => navigate("/login")}>
+                Login
+              </MenuItem>
+              <MenuItem className="menu" onClick={() => navigate("/register")}>
+                Register
+              </MenuItem>
+            </div>
           </Menu>
         </div>
       </div>

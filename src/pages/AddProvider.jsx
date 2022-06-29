@@ -35,7 +35,7 @@ const AddProvider = () => {
       url: "http://c4f2.acsight.com:7770/api/system/add-partner-sms-provider",
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjBGQ0Y0N0E5NzVDQzJCNTdEQTdFRkFGQUM2MTkxOUUyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NTY0NjkzMTEsImV4cCI6MTY1NjQ3MjkxMSwiaXNzIjoiaHR0cDovL2M0ZjIuYWNzaWdodC5jb206NzcxMCIsImF1ZCI6InNjb3BlLmZ1bGxhY2Nlc3MiLCJjbGllbnRfaWQiOiJDbGllbnRJZFdpdGhGdWxsQWNjZXNzIiwic3ViIjoiUGFydG5lciM4IiwiYXV0aF90aW1lIjoxNjU2NDY5MzExLCJpZHAiOiJsb2NhbCIsIlVzZXJJRCI6IjgiLCJVc2VyVHlwZSI6IlBhcnRuZXIiLCJQYXJ0bmVySUQiOiI1IiwiQ2xpZW50SUQiOiIwIiwiREJUeXBlIjoiMCIsIlNlcnZlciI6IiIsIkRhdGFiYXNlIjoiIiwiVXNlcm5hbWUiOiIiLCJQYXNzd29yZCI6IiIsImp0aSI6IkY0QzFCMjIyQURDOTk0NzEzODg2N0ZFMkVDN0Q1QjI3IiwiaWF0IjoxNjU2NDY5MzExLCJzY29wZSI6WyJzY29wZS5mdWxsYWNjZXNzIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.D8XI_tN48CZhOBoPm5hl1xlnvsd7yTAfX1wmoXKMHQnksYPjWrBhLLJkzma8u18OQj6fDU2zmWFCsq992pEb_t1ox8wGlnWYIW7TZv2SBSSLNokcyEFbTOuj2ADcaD4hVSFwvadInXg4qAAoS2_6GNWqHLv8dQqBN4lSHm6vALndhTZoHk_GhOQh_7rzdYDIz4nCALDWOViyfB13DYlNW6f7YiMH1Q9qnS3SJ5-1-XgCi4e3s0QFnqmxKFOggbYIMDn0wj3pvN7f9X4sjdd5Q63prnGMIG9XuPW3__6Ssrry5javzXnPAjFjicmRftzSV0Ep18RF2vIuSOA2HEQ_wQ",
+          "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjBGQ0Y0N0E5NzVDQzJCNTdEQTdFRkFGQUM2MTkxOUUyIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2NTY0OTk4NDAsImV4cCI6MTY1NjUwMzQ0MCwiaXNzIjoiaHR0cDovL2M0ZjIuYWNzaWdodC5jb206NzcxMCIsImF1ZCI6InNjb3BlLmZ1bGxhY2Nlc3MiLCJjbGllbnRfaWQiOiJDbGllbnRJZFdpdGhGdWxsQWNjZXNzIiwic3ViIjoiUGFydG5lciM4IiwiYXV0aF90aW1lIjoxNjU2NDk5ODQwLCJpZHAiOiJsb2NhbCIsIlVzZXJJRCI6IjgiLCJVc2VyVHlwZSI6IlBhcnRuZXIiLCJQYXJ0bmVySUQiOiI1IiwiQ2xpZW50SUQiOiIwIiwiREJUeXBlIjoiMCIsIlNlcnZlciI6IiIsIkRhdGFiYXNlIjoiIiwiVXNlcm5hbWUiOiIiLCJQYXNzd29yZCI6IiIsImp0aSI6IkRBNTc4NjUyMTAwODIxRTNDMzU0QzU1RjEzMjQwOEJGIiwiaWF0IjoxNjU2NDk5ODQwLCJzY29wZSI6WyJzY29wZS5mdWxsYWNjZXNzIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.FI76Ngom5c9Bi67yMZxvqJVTkIXCPJgGK9TKZhizOEy8TfDDoMkJuKPmeV6iSmQ0EL3mImAZy2EX-aQ-fBuYF254l1remNZ6xbf2gB2N0zJrF6qySLFiV2HcROWK3g-7goKsG_IbglSVnyY9efFiwVcX3PKNuqSOBqDw7DRcr53EDgTtrJH8VPOPiH0ukcqoTIQZnmpYavn1w0zi_Q_wRfA-W_369iJddYByorIr6ZqKsSniO6XgxTamlTwOlF1t7ex31ogDcVI_ZHgkWm5z8lsGgnFk0YEe-jzSdggTLcr6NHyttURQLUf6EFbWPwkT6fPgxy8wJXNt3BdnJGZuSg",
         "Content-Type": "application/json",
       },
       data: data,
@@ -205,6 +205,7 @@ const AddProvider = () => {
           </div>
           <div className="">
             <input
+              required
               type="text"
               className="form-control"
               id="Status"
