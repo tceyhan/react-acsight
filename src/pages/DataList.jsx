@@ -9,7 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-const Data = () => {
+const DataList = () => {
   const [veri, setVeri] = useState([]);
 
   useEffect(() => {
@@ -90,4 +90,4 @@ const Data = () => {
   );
 };
 
-export default Data;
+export default DataList;

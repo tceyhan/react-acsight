@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
+
 const AddProvider = () => {
+
   const [formValues, setFormValues] = useState({
     ID: "0",
     ProviderID: "",
@@ -25,37 +27,9 @@ const AddProvider = () => {
   };
 
   const handleSubmit = (e) => {
-    const {
-      ID,
-      ProviderID,
-      BaseURL,
-      fromName,
-      Username,
-      Password,
-      VendorCode,
-      ApiKey,
-      SecretKey,
-      AccountSID,
-      AuthToken,
-      Status,
-
-    } = formValues;
-    e.preventDefault();
-    let data = JSON.stringify({
-      "id": ID,
-      "providerID": ProviderID,
-      "partnerID": 2,
-      "baseURL": BaseURL,
-      "fromName": fromName,
-      "username": Username,
-      "password": Password,
-      "vendorCode": VendorCode,
-      "apiKey": ApiKey,
-      "secretKey": SecretKey,
-      "accountSID": AccountSID,
-      "authToken": AuthToken,
-      "status": Status,
-    });
+    e.preventDefault()
+    console.log(formValues); 
+    var data = formValues
     let config = {
       method: "post",
       url: "http://c4f2.acsight.com:7770/api/system/add-partner-sms-provider",
@@ -82,7 +56,7 @@ const AddProvider = () => {
         }
       });
 
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   return (
