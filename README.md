@@ -1,3 +1,3 @@
-# https://acsight.netlify.app/
+acsight
 
 
